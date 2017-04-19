@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Buoi 6.btvn</title>
+<link href="css/css.css" rel="stylesheet" type="text/css">
+</head>
+<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+<script src="js/cal.js" type="text/javascript"></script>
+<body>
+	<input type="number" id="txtso_a">
+<select id="cmb">
+    	<option value="pt">Phép tính</option>
+    	<option value="+">Cộng</option>
+        <option value="-">Trừ</option>
+        <option value="*">Nhân</option>
+        <option value="/">Chia</option>
+     </select>
+     <input type="number" id="txtso_b">
+     =
+     <input type="text" id="ketqua"><br><br><br><br><br>
+<input type="submit" id="giam" class="bt" value="-">
+<input type="text" class="ht" id="ht" readonly>
+<input type="submit"  id="tang" class="bt" value="+">
+<script>
+		var value=1;
+		$("#ht").val(value);
+	 	$(document).ready(function(e) {
+	 		$("#cmb").change(function(){
+			var a = parseInt($("#txtso_a").val());
+			var b = parseInt($("#txtso_b").val());
+			var c = $("#cmb").val();
+			if(isNaN(a))
+			{
+				alert("Phải nhập vào ký tự số!!");
+				$("#txtso_a").focus();
+				$("#cmb").val("pt");
+			}
+			else
+			 if(isNaN(b))
+			 {
+				alert("Phải nhập vào ký tự số!!");
+				$("#txtso_b").focus(); 
+				$("#cmb").val("pt");
+			 }
+			 else
+			   tinh(c,a,b);
+			})
+		$("#giam").click(function(){
+				if(value>1)
+				{
+					value=value-1;
+					$("#ht").val(value);
+				}
+			});	
+		$("#tang").click(function(){
+					value=value+1;
+				$("#ht").val(value);
+			});	
+			
+	 	});
+	 </script>
+</body>
+</html>
