@@ -20,11 +20,9 @@
      =
      <input type="text" id="ketqua"><br><br><br><br><br>
 <input type="submit" id="giam" class="bt" value="-">
-<input type="text" class="ht" id="ht" readonly>
+<input type="text" class="ht" id="ht" value="1" readonly>
 <input type="submit"  id="tang" class="bt" value="+">
 <script>
-		var value=1;
-		$("#ht").val(value);
 	 	$(document).ready(function(e) {
 	 		$("#cmb").change(function(){
 			var a = parseInt($("#txtso_a").val());
@@ -45,7 +43,8 @@
 			 }
 			 else
 			   tinh(c,a,b);
-			})
+			});
+		var value=parseInt($("#ht").val());
 		$("#giam").click(function(){
 				if(value>1)
 				{
@@ -62,3 +61,4 @@
 	 </script>
 </body>
 </html>
+
